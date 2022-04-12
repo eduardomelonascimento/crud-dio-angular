@@ -1,0 +1,30 @@
+<div class="card w-100 my-5">
+    <div class="card-body">
+        <h1 class="card-title text-center">Lista de Usuários</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Idade</th>
+                    <th>Profissão</th>
+                    <th colspan="2" class="p-0"> <button class="btn btn-outline-success w-100 fw-bold"
+                            routerLink="/form">Cadastrar Novo</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.profession }}</td>
+                    <td><button class="btn btn-outline-primary fw-bold" [routerLink]="['/form', user.id]">Editar</button></td>
+                    <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Excluir</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
