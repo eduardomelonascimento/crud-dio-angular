@@ -1,0 +1,12 @@
+<mat-list-item>
+    <p [ngStyle]="{textDecoration: task.done ? 'line-through' : 'none'}">
+        {{task.title}}
+        
+    </p>
+    <button mat-icon-button aria-label="Marca como concluído" color="primary" (click)="markAsDone()">
+        <mat-icon>done</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Exclui" color="warn" (click)="removeTask()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</mat-list-item>
